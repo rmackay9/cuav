@@ -268,11 +268,6 @@ int main(int argc, const char *argv[])
 
         load_rpi_bayer(fname, bayer);
 
-        char *pgm_name = NULL;
-        asprintf(&pgm_name, "%s.pgm", basename);
-        save_pgm(bayer, pgm_name);
-        free(pgm_name);
-    
         debayer_BGGR(bayer, rgb16);
 
         rgb16_to_rgb8(rgb16, rgb8);
